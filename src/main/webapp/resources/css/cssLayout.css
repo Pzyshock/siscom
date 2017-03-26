@@ -1,0 +1,154 @@
+
+body {
+    height:100%;
+    margin: auto;
+    
+}
+
+#contenido { 
+ height: -moz-calc(100% - 80px); /* Firefox */
+ height: -webkit-calc(100% - 80px); /* Chrome, Safari */
+ height: calc(100% - 80px); /* IE9+ and future browsers */
+ background-color: yellow 
+}
+
+#top {
+    position: relative;
+    background-color: #fff;
+    color: white;
+    padding: 0px;
+    margin: 0px 0px 20px 0px;
+    height: 50px;
+}
+
+#bottom {
+    position: fixed;
+    background-color: #c2dfef;
+    padding: 5px;
+    margin: 10px 0px 0px 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+    margin: auto;
+    min-height: 100%;
+
+ height: -moz-calc(100% - 100px); /* Firefox */
+ height: -webkit-calc(100% - 100px); /* Chrome, Safari */
+ height: calc(100% - 100px); /* IE9+ and future browsers */
+ 
+
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    padding: 5px;
+
+    height: 100%;
+    min-height: 100%;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: auto;
+    margin-left: 170px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: black;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+
+
+
+
+.cintillo {
+    height: 60px;
+    background-color: #FFF;
+}
+
+.pie {
+    height: 30px;
+    background-color: #555;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #FFF;
+    text-align: left;
+    padding: 0px 0px 0px 20px;
+    margin-top: 10px;
+}
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+    
+}
+
+
+.sinmargendown {
+    margin-bottom: 0px;
+}
+
+.sinmargenup {
+    margin-top:0px;
+}
+
+.fullalto {
+    height: 100%;
+}
+
+.fullancho {
+    width: 100%;
+}
+
+.topimage {
+    display:block;
+    max-height: 100%;
+    width: auto;
+}
+
+.fuente12 {
+    font-size: 12px;
+}
+
+.fuente14 {
+    font-size: 14px;
+}
+
+.envo {
+    display: block;
+    float: left;
+    margin: auto;
+}
+

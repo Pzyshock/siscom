@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="/WEB-INF/plantillapfaces.xhtml">
+
+            <ui:define name="content">
+                <div style="margin: 40px;">
+                    <h3>Nuevo Usuario</h3>
+                    <p:separator />
+                    <p:tooltip />
+                    <h:form>
+                        
+                    <p:panelGrid columns="4" layout="grid" styleClass="ui-noborder" > 
+                        <p:row>
+                            <p:outputLabel for="txtnusuario" value="Nombre de Usuario" />
+                            <p:inputText required="true" id="txtnusuario" validatorMessage="Disculpe, debe ingresar un nombre valido" requiredMessage="Ingrese el nombre de usuario" />
+                            <p:message for="txtnusuario" display="tooltip" />
+                        </p:row>
+                        <p:row>
+                            <p:outputLabel for="txtnreal" value="Nombre Real" />
+                            <p:inputText id="txtnreal" required="true" requiredMessage="Ingrese el nombre real" validatorMessage="Disculpe, debe ingresar un nombre valido" />
+                            <p:message for="txtnreal" display="tooltip" />
+                        </p:row>
+                        <p:row>
+                            <p:outputLabel for="txtclave" value="Clave" />
+                            <p:inputText id="txtclave" required="true" requiredMessage="Debe asignar una clave" validatorMessage="Disculpe, debe ingresar un nombre valido" />
+                            <p:message for="txtclave" display="tooltip" />
+                        </p:row>
+                        <p:row>
+                            <p:outputLabel value="Este usuario es administrador?  " />
+                            <p:selectBooleanButton id="esadmin" onLabel="Si" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:100px" />
+                        </p:row>
+                     </p:panelGrid>
+                        <div class="ui-g" id="detalleAcceso">
+                            <div class="ui-g-6">
+                                
+                                
+                            </div>
+                            <div class="ui-g 3">
+                                
+                            </div>
+                            <div class="ui-g-3">
+                                
+                            </div>
+                            <div class="ui-g-12">
+                                <p:separator />
+                            </div>
+                            <div class="ui-g-6">
+                                <p:commandButton type="submit" value="Aki" update="@form" />
+                            </div>
+                        </div>
+                    
+                        
+                    </h:form>
+ 
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

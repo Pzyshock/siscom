@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet name="css/normalize.css" />
+        <h:outputStylesheet name="css/skeleton.css" />
+        <h:outputStylesheet name="css/login.css" />
+        <title>Control de Maquinaria</title>
+    </h:head>
+    <h:body>
+        <div class="row sinmargendown">
+        <div class="cintillo" >
+            <h:graphicImage name="/imagenes/cintilloiz.png" class="fleft topimage" />
+            <h:graphicImage name="/imagenes/cintillode.png" class="fright topimage" />
+        </div>
+        </div>
+        <hr class="sinmargenup" />
+        <div class="env">
+            <h3>Inicio de sesion</h3>
+            <h:form>
+                
+                <div class="container" id="panel">
+                    <p:outputLabel for="txtuser" value="Usuario:" class="fleft" />
+                    <p:inputText id="txtuser" required="true" />
+                    
+                    <p:outputLabel for="txtclave" value="Clave:" class="fleft" />
+                    <p:inputText id="txtclave" required="true" />
+                    <p:commandButton type="submit" value="Entrar" update="@form" />
+                </div>
+            </h:form>
+        </div>
+        <div class="pie">
+            <p>CopyLeft 2017 - COVINEA</p>
+        </div>
+    </h:body>
+</html>
+
