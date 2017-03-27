@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
@@ -37,9 +38,17 @@
                             <p:selectBooleanButton id="esadmin" onLabel="Si" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:100px" />
                         </p:row>
                      </p:panelGrid>
+                         <h3>Grid Layout</h3>
+    <p:selectManyCheckbox id="grid" value="#{checkboxView.selectedCities}" layout="grid" columns="3">
+        <f:selectItems value="#{usuarioController.permisosMaquinaria}" var="city" itemLabel="#{city}" itemValue="#{city}" />
+    </p:selectManyCheckbox>
                         <div class="ui-g" id="detalleAcceso">
                             <div class="ui-g-6">
-                                
+                                <p:selectManyCheckbox id="checkMaquinaria">
+                                    <f:selectItems value="#{usuarioController.permisosMaquinaria}" var="maq" itemLabel="#{maq}" itemValue="#{maq}" />
+                                    
+                                  
+                                </p:selectManyCheckbox>
                                 
                             </div>
                             <div class="ui-g 3">
