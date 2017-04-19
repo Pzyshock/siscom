@@ -16,58 +16,48 @@
                     <p:separator />
                     <p:tooltip />
                     <h:form>
+<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                        <p:panelGrid columns="4" layout="grid" styleClass="ui-noborder" > 
+                            <p:row>
+                                <p:outputLabel for="txtnusuario" value="Nombre de Usuario" />
+                                <p:inputText required="true" id="txtnusuario" validatorMessage="Disculpe, debe ingresar un nombre valido" requiredMessage="Ingrese el nombre de usuario" />
+                                <p:message for="txtnusuario" display="tooltip" />
+                            </p:row>
+                            <p:row>
+                                <p:outputLabel for="txtnreal" value="Nombre Real" />
+                                <p:inputText id="txtnreal" required="true" requiredMessage="Ingrese el nombre real" validatorMessage="Disculpe, debe ingresar un nombre valido" />
+                                <p:message for="txtnreal" display="tooltip" />
+                            </p:row>
+                            <p:row>
+                                <p:outputLabel for="txtclave" value="Clave" />
+                                <p:inputText id="txtclave" required="true" requiredMessage="Debe asignar una clave" validatorMessage="Disculpe, debe ingresar un nombre valido" />
+                                <p:message for="txtclave" display="tooltip" />
+                            </p:row>
+                            <p:row>
+                                <p:outputLabel value="Este usuario es administrador?  " />
+                                <p:selectBooleanButton id="esadmin" value="#{usuarioController.esUser}" onLabel="Si" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:100px" > 
+                                    <p:ajax update="myContainer" listener="#{usuarioController.addMessage}" />
+                                </p:selectBooleanButton>    
+                            </p:row>
+                        </p:panelGrid>
                         
-                    <p:panelGrid columns="4" layout="grid" styleClass="ui-noborder" > 
-                        <p:row>
-                            <p:outputLabel for="txtnusuario" value="Nombre de Usuario" />
-                            <p:inputText required="true" id="txtnusuario" validatorMessage="Disculpe, debe ingresar un nombre valido" requiredMessage="Ingrese el nombre de usuario" />
-                            <p:message for="txtnusuario" display="tooltip" />
-                        </p:row>
-                        <p:row>
-                            <p:outputLabel for="txtnreal" value="Nombre Real" />
-                            <p:inputText id="txtnreal" required="true" requiredMessage="Ingrese el nombre real" validatorMessage="Disculpe, debe ingresar un nombre valido" />
-                            <p:message for="txtnreal" display="tooltip" />
-                        </p:row>
-                        <p:row>
-                            <p:outputLabel for="txtclave" value="Clave" />
-                            <p:inputText id="txtclave" required="true" requiredMessage="Debe asignar una clave" validatorMessage="Disculpe, debe ingresar un nombre valido" />
-                            <p:message for="txtclave" display="tooltip" />
-                        </p:row>
-                        <p:row>
-                            <p:outputLabel value="Este usuario es administrador?  " />
-                            <p:selectBooleanButton id="esadmin" onLabel="Si" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:100px" />
-                        </p:row>
-                     </p:panelGrid>
-                         <h3>Grid Layout</h3>
-    <p:selectManyCheckbox id="grid" value="#{checkboxView.selectedCities}" layout="grid" columns="3">
-        <f:selectItems value="#{usuarioController.permisosMaquinaria}" var="city" itemLabel="#{city}" itemValue="#{city}" />
-    </p:selectManyCheckbox>
-                        <div class="ui-g" id="detalleAcceso">
-                            <div class="ui-g-6">
-                                <p:selectManyCheckbox id="checkMaquinaria">
-                                    <f:selectItems value="#{usuarioController.permisosMaquinaria}" var="maq" itemLabel="#{maq}" itemValue="#{maq}" />
-                                    
-                                  
-                                </p:selectManyCheckbox>
-                                
-                            </div>
-                            <div class="ui-g 3">
-                                
-                            </div>
-                            <div class="ui-g-3">
-                                
-                            </div>
-                            <div class="ui-g-12">
-                                <p:separator />
-                            </div>
-                            <div class="ui-g-6">
-                                <p:commandButton type="submit" value="Aki" update="@form" />
+                        <h:panelGroup id="myContainer" layout="block">
+                            <p:outputPanel id="SIP" rendered="#{usuarioController.esUser}" autoUpdate="true">
+                        <div class="ui-g" id="usuarioNormal" >
+                            <div class="ui-g-4">
+                                <p:outputLabel value="#{usuarioController.esUser}" />
+                                <div class="ui-g-12">
+                                    <p:selectManyCheckbox id="gridPUsuario" value="#{usuarioController.permisoMaquinariaSelected}" layout="grid" columns="1" >
+                                 <f:selectItems value="#{usuarioController.permisosMaquinaria}" var="pMaquinaria" itemLabel="#{pmaquinaria}" itemValue="#{pmaquinaria}" />
+                             </p:selectManyCheckbox>
+                                </div>
                             </div>
                         </div>
-                    
-                        
+                        </p:outputPanel>
+                        </h:panelGroup>
+
                     </h:form>
- 
+
                 </div>
             </ui:define>
 

@@ -10,7 +10,9 @@ import java.util.List;
 import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.faces.application.FacesMessage;
 
 /**
  *
@@ -20,15 +22,34 @@ import javax.inject.Named;
 @RequestScoped
 public class usuarioController {
     private List<String> permisosMaquinaria;
+    private String[] permisoMaquinariaSelected;
+    private List<String> permisosCronograma;
+    private List<String> permisosMantenimiento;
+    private boolean esUser;
+
+    public void setEsUser(boolean esUser) {
+        this.esUser = esUser;
+    }
+
+    public boolean getEsUser() {
+        return esUser;
+    }
+
+  
+   
+
+    public void setPermisoMaquinariaSelected(String[] permisoMaquinariaSelected) {
+        this.permisoMaquinariaSelected = permisoMaquinariaSelected;
+    }
+
+    public String[] getPermisoMaquinariaSelected() {
+        return permisoMaquinariaSelected;
+    }
 
     public List<String> getPermisosMaquinaria() {
         return permisosMaquinaria;
     }
 
-    
-    private List<String> permisosCronograma;
-    private List<String> permisosMantenimiento;
-    
     @PostConstruct
     public void init() {
         permisosMaquinaria = new ArrayList<String>();
@@ -37,18 +58,20 @@ public class usuarioController {
         permisosMaquinaria.add("Cambiar Estatus");
         permisosMaquinaria.add("Eliminar");
         permisosMaquinaria.add("Trasladar");
-        permisosMaquinaria.add("Listar");
+        
         
         permisosCronograma = new ArrayList<String>();
-        permisosMaquinaria.add("Crear");
-        permisosMaquinaria.add("Modificar");
-        permisosMaquinaria.add("Eliminar");
+        permisosCronograma.add("Crear2");
+        permisosCronograma.add("Modificar");
+        permisosCronograma.add("Eliminar");
 
-        permisosCronograma = new ArrayList<String>();
-        permisosMaquinaria.add("Crear");
-        permisosMaquinaria.add("Modificar");
-        permisosMaquinaria.add("Suspender");
+        esUser = true;
+
     }
     
+    public void addMessage() {
+        String summary = esUser ? "Checked" : "Unchecked";
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(summary));
+    }
     
 }
